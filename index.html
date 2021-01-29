@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>Create Dataset</title>
+    <script src="fingerprinting/fingerprint.js"></script>
+    <script src="hash/murmurhash3.js"></script>
+    <script src="hash/java_hashcode.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+        <div class="location">
+                <h1 class="timezone">TimeZone</h1>
+                <img src="" class="icon">
+                <canvas class="icon" width="128" height="128"></canvas>
+            </div>
+        
+            <div class="temp">
+                <div class="degree-section">
+                    <h2 class="temp-degree"></h2>
+                    <span>C</span>
+                </div>
+                <div class="temp-description"></div>
+            </div>
+        
+            <div>
+                <div id="celsius">
+                    <input class="celsius" type="number" value="" placeholder="celsius...">
+                </div>
+        
+                <div id="fahrenheit">
+                    <input class="fahrenheit" type="number" placeholder="fahrenheit...">
+                </div>
+        
+                <div id="kelvin">
+                    <input class="kelvin" type="number" placeholder="kelvin...">
+                </div>
+            </div>
+
+<div style="text-align: center;">
+    <h3 style="margin-top: 60px; font-size: 30px">Fingerprint with canvas fingerprinting</h3>
+    <h1 id="withCanvasDrawing"></h1>
+</div>
+
+<script src="./app.js"></script>
+<script>
+    
+    var withCanvasDrawing = new Fingerprint({canvas: true});
+    var withoutCanvasDrawing = new Fingerprint({canvas: false});
+    var javaHashFunction = new Fingerprint({hasher: javaHashCode});
+
+    document.getElementById('withCanvasDrawing').innerHTML = withCanvasDrawing.get()
+
+</script>
+</body>
+</html>
